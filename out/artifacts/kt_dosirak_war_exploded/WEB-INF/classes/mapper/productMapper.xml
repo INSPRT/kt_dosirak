@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kt_dosirak.dao.ProductMapper">
+
+    <!--product-->
+    <select id="count" resultType="int">
+        SELECT count(*) FROM kt_product
+    </select>
+
+    <select id="countChest" resultType="int">
+        SELECT count(*) FROM kt_product WHERE product_category_id_fk = 001
+    </select>
+
+    <select id="countDosirak" resultType="int">
+        SELECT count(*) FROM kt_product WHERE product_category_id_fk = 002
+    </select>
+
+    <select id="countBeverage" resultType="int">
+        SELECT count(*) FROM kt_product WHERE product_category_id_fk = 003
+    </select>
+
+    <select id="countMealkit" resultType="int">
+        SELECT count(*) FROM kt_product WHERE product_category_id_fk = 004
+    </select>
+
+    <delete id="deleteAll">
+        DELETE FROM kt_product
+    </delete>
+
+    <delete id="deleteChestAll">
+        DELETE FROM kt_product WHERE product_category_id_fk = 001
+    </delete>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM kt_product WHERE product_id = #{product_id}
+    </delete>
+
+    <insert id="insert" parameterType="ProductDto">
+        INSERT INTO kt_product
+        (product_id, product_name, product_category_id_fk, product_price, product_stock, product_calories, product_desc)
+        VALUES
+            (#{product_id}, #{product_name}, #{product_category_id_fk}, #{product_price}, #{product_stock}, #{product_calories}, #{product_desc})
+    </insert>
+
+    <sql id="selectFromProduct">
+        SELECT product_id, product_name, product_category_id_fk, product_price, product_stock, product_calories, product_desc, product_regdate
+        FROM kt_product
+    </sql>
+
+    <select id="selectAll" resultType="ProductDto">
+        <include refid="selectFromProduct"/>
+        ORDER BY product_regdate DESC, product_id DESC
+    </select>
+
+    <select id="select" parameterType="String" resultType="ProductDto">
+        <include refid="selectFromProduct"/>
+        WHERE product_id = #{product_id}
+    </select>
+
+    <select id="selectHomePage" parameterType="map" resultType="ProductDto">
+        <include refid="selectFromProduct"/>
+        ORDER BY product_regdate DESC, product_id DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="selectChestPage" parameterType="map" resultType="ProductDto">
+        <include refid="selectFromProduct"/>
+        WHERE product_category_id_fk = 001
+        ORDER BY product_regdate DESC, product_id DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="selectDosirakPage" parameterType="map" resultType="ProductDto">
+        <include refid="selectFromProduct"/>
+        WHERE product_category_id_fk = 002
+        ORDER BY product_regdate DESC, product_id DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="selectBeveragePage" parameterType="map" resultType="ProductDto">
+        <include refid="selectFromProduct"/>
+        WHERE product_category_id_fk = 003
+        ORDER BY product_regdate DESC, product_id DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="selectMealkitPage" parameterType="map" resultType="ProductDto">
+        <include refid="selectFromProduct"/>
+        WHERE product_category_id_fk = 004
+        ORDER BY product_regdate DESC, product_id DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <update id="update" parameterType="ProductDto">
+        UPDATE kt_product
+        SET   product_name = #{product_name},
+              product_category_id_fk = #{product_category_id_fk},
+              product_price = #{product_price},
+              product_stock = #{product_stock},
+              product_calories = #{product_calories},
+              product_desc = #{product_desc},
+              product_regdate = now()
+              WHERE product_id = #{product_id}
+    </update>
+    <!--//product-->
+
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kt_dosirak.dao.CartMapper">
+
+    <!-- 카트 추가 -->
+    <insert id="insert" parameterType="CartDto">
+        insert into kt_cart(cart_user_id, cart_product_id, cart_amount)
+        values(#{cart_user_id}, #{cart_product_id}, #{cart_amount})
+    </insert>
+
+    <!-- 카트 수량 수정 -->
+    <update id="update" parameterType="CartDto">
+        update kt_cart set cart_amount = #{cart_amount} where cart_id = #{cart_id}
+    </update>
+
+    <!-- 카트 목록 -->
+    <select id="getCart" parameterType="String" resultType="CartDto">
+        select a.cart_id, a.cart_user_id, a.cart_product_id, a.cart_amount, b.product_name, b.product_price, b.product_calories, b.product_desc
+        from kt_cart a left outer join kt_product b on a.cart_product_id = b.product_id
+        where cart_user_id = #{cart_user_id}
+    </select>
+
+    <!-- 카트 확인 -->
+    <select id="checkCart" parameterType="CartDto" resultType="CartDto">
+        select * from kt_cart
+        where cart_user_id = #{cart_user_id} and cart_product_id = #{cart_product_id}
+    </select>
+
+    <!-- 카트 삭제 -->
+    <delete id="delete" parameterType="int">
+        DELETE from kt_cart
+        WHERE cart_id = #{cart_id}
+    </delete>
+
+
+    <delete id="deleteAll" parameterType="String">
+        DELETE FROM kt_cart
+        WHERE cart_user_id = #{cart_user_id}
+    </delete>
+
+</mapper>

@@ -1,0 +1,999 @@
+@charset "utf-8";
+
+body{
+    background-color: black;
+}
+.wrap{
+}
+.wrapAuto{
+    width: 1200px;
+    margin: 0 auto;
+}
+.logout{
+    color: white;
+}
+.nav_headerWrap{
+    overflow: hidden;
+}
+.nav_header{
+    height: 18px;
+    margin: 0 auto;
+    text-align: center;
+}
+.nav_header ul li{
+    float: left;
+}
+.nav_header ul li:first-child{
+    margin-left: 515px;
+}
+.nav_header ul li:last-child{
+    margin-left: 368px;
+}
+.nav_header span{
+    color: grey;
+    font-size: 13px;
+}
+.nav_menuWrap{
+    margin: 0 auto;
+    color: white
+}
+.nav_menu{
+    overflow: hidden;
+    height: 70px;
+    line-height: 70px;
+    font-size: 18px;
+}
+.nav_left{
+    display: inline-block;
+    float: left;
+    margin-left: 60px;
+}
+.nav_left ul li{
+    margin-right: 45px;
+    float: left;
+}
+.nav_left ul li a{
+    color:white;
+}
+.nav_left ul li a:hover{
+    color: red;
+}
+.nav_center{
+    margin-left: 80px;
+    margin-right: 50px;
+    display: inline-block;
+    font-size: 28px;
+}
+.nav_center .nav_menu_ul_li_second a{
+    color: white;
+}
+.nav_center .nav_menu_ul_li_second a:hover{
+    color: red;
+}
+.nav_center ul li{
+    float: left;
+}
+.nav_center ul li:hover{
+    color: red;
+}
+.nav_third{
+    margin-left: 65px;
+    margin-right: 5px;
+    display: inline-block;
+}
+.nav_third ul li{
+    font-size: 15px;
+    float: left;
+    margin-right: 32px;
+}
+.nav_menu_ul_li_third a{
+    color:white;
+}
+.nav_menu_ul_li_third a:hover{
+    color:red;
+}
+.nav_right{
+    clear: both;
+    display: inline-block;
+    margin-left: 14px;
+}
+.nav_right ul{
+    overflow: hidden;
+
+}
+.nav_right ul li{
+    float: left;
+    margin-right: 5px;
+}
+.nav_right ul li:hover{
+    color: red;
+}
+.nav_right ul li:last-child{
+    margin-right: 0;
+}
+.menu_img_cart{
+    display: inline-block;
+    background: url(../img/cart_white.jpg) no-repeat;
+    background-position: 0 13px;
+    background-position: 0 15px;
+    background-size: 35px;
+    font-size: 0;
+    width: 40px;
+    height: 50px;
+}
+.menu_img_cart:hover{
+    background: url(../img_hover/hover_cart_white.png) no-repeat;
+    background-size: 40px;
+    background-position: -3px 13px;
+}
+.menu_img_client{
+    display: inline-block;
+    background: url(../img/client_white.png) no-repeat;
+    background-position: 0 13px;
+    background-size: 35px;
+    font-size: 0;
+    width: 40px;
+    height: 50px;
+}
+.menu_img_client:hover{
+    background: url(../img_hover/hover_client_white.png) no-repeat;
+    background-size: 40px;
+    background-position: -3px 10px;
+}
+.menu_img_noti{
+    display: inline-block;
+    background: url(../img/notificaltion_white.png) no-repeat;
+    background-position: 0 13px;
+    background-size: 35px;
+    font-size: 0;
+    width: 40px;
+    height: 50px;
+}
+.menu_img_noti:hover{
+    background: url(../img_hover/hover_notificaltion_white.png) no-repeat;
+    background-size: 40px;
+    background-position: -3px 10px;
+}
+
+.menu_img_menu{
+    display: inline-block;
+    background: url(../img/menu_white.png) no-repeat;
+    background-position: right 2px;
+    background-size: 60px;
+    font-size: 0;
+    width: 40px;
+    height: 50px;
+}
+.menu_img_menu:hover{
+    background: url(../img_hover/hover_menu_white.png) no-repeat;
+    background-position: -26px -3px;
+    background-size: 70px;
+
+}
+
+
+.banner_main{
+    position: relative;
+}
+.banner_img{
+    background: url(../img/banner.png) top;
+    display: inline-block;
+    height: 433px;
+    width: 1200px;
+    position: relative;
+}
+.item_rcmdWrap{
+}
+.item_rcmd{
+    position: relative;
+}
+.item_rcmd ul{
+    position: absolute;
+    height: 40px;
+    width: 1200px;
+    margin-left: 107px;
+    top:-44px;
+}
+.item_rcmd ul li{
+    float: left;
+    width: 168px;
+    height: 40px;
+    background-color: black;
+    opacity: 0.5;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+}
+.item_rcmd ul li:hover{
+    background-color: red;
+    opacity: 0.7;
+}
+.searchWrap{
+
+}
+.searchWrap2{
+    background-color: #222;
+    width: 1010px;
+    height: 120px;
+    margin-left: 105px;
+    border-radius: 4px;
+    line-height: 120px;
+}
+.search_title{
+    margin-left: 107px;
+    margin-top: 35px;
+}
+.search_title ul{
+    overflow: hidden;
+}
+.search_title ul li{
+    height: 45px;
+    width: 200px;
+    float: left;
+    font-size: 22px;
+    color: grey;
+}
+.search_title ul li:hover{
+    color: red;
+}
+.search_section{
+    text-align: center;
+}
+.search_section ul{
+    display: inline-block;
+}
+.search_section ul li{
+    float: left;
+    margin-right: 20px;
+}
+.search_section ul li select{
+    color: white;
+}
+.search_section ul li:last-child{
+    margin-right: 0;
+}
+.search_section .drop1{
+    width: 100px;
+    height: 50px;
+    background-color: #222;
+    border: 1px solid white;
+    padding: 5px;
+    border-color: dimgray;
+    border-radius: 4px;
+}
+.search_section .drop2{
+    width: 150px;
+    height: 50px;
+    background-color: #222;
+    border: 1px solid white;
+    border-color: dimgray;
+    padding: 5px;
+    border-radius: 4px;
+}
+.search_section .drop3{
+    width: 120px;
+    height: 50px;
+    background-color: #222;
+    border: 1px solid white;
+    border-color: dimgray;
+    padding: 5px;
+    border-radius: 4px;
+}
+.search_section .drop4{
+    width: 240px;
+    height: 50px;
+    background-color: #222;
+    border: 1px solid white;
+    border-color: dimgray;
+    padding: 5px;
+    border-radius: 4px;
+}
+.search_section .search_btn{
+    width: 240px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    border: 0;
+    outline: 0;
+}
+.search_section .search_btn:hover{
+    background-color: black;
+}
+.item_list ul{
+    overflow: hidden;
+    margin-top: 30px;
+    margin-left: 135px;
+}
+.item_list ul li{
+    float: left;
+    width: 280px;
+    height: 370px;
+    border: 2px solid dimgray;
+    margin-right: 50px;
+    margin-bottom: 40px;
+}
+.item_list .item_list_img{
+    width: 280px;
+    height: 280px;
+    background-color: #222;
+}
+.item_list_img img{
+    width: 280px;
+    height: 280px;
+}
+.item_list_txt{
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 20px;
+}
+.item_list_txt a{
+    color: white;
+}
+
+/*닭가슴살 페이지 시작*/
+.itemListHeader{
+    width: 990px;
+    margin: 0 auto;
+    border-bottom: 2px solid grey;
+    margin-top: 45px;
+    color: white;
+    padding-bottom: 8px;
+}
+.itemListHeader_first{
+    overflow: hidden;
+}
+.itemListHeader_first_title{
+    font-size: 18px;
+    margin-left: 15px;
+}
+.itemListHeader_first_title a{
+    color: grey;
+}
+.itemListHeader_first_title a:hover{
+    color: red;
+}
+.itemListHeader ul{
+}
+.itemListHeader ul li{
+    float: left;
+    margin-right: 5px;
+}
+.itemListHeader_second{
+    float: right;
+    margin-top: 10px;
+}
+.noContents{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 150px;
+}
+.pageHandle{
+    text-align: center;
+    margin-left: 25px;
+    margin-bottom: 100px;
+    font-size: 20px;
+}
+.page{
+    color: white;
+}
+.page:hover{
+    color:red;
+}
+.paging-active{
+    color: red;
+}
+/*닭가슴살 페이지 끝*/
+
+/*로그인 페이지 시작*/
+.imgText{
+    font-size: 32px;
+    position: absolute;
+    bottom: -18px;
+    left: 555px;
+    color:white;
+}
+.login_subtitle{
+    margin-top: 25px;
+    text-align: center;
+    color: grey;
+    font-size: 14px;
+    margin-bottom: 19px;
+}
+.login_bg{
+    background-color: #222;
+    width: 520px;
+    height: 263px;
+    margin-left: 300px;
+    margin-bottom: 100px;
+    padding: 28px 0 28px 60px;
+    border-radius: 5px;
+}
+.login_text_first{
+    font-size: 22px;
+    color: white;
+}
+.login_text_second{
+    font-size: 14px;
+    color: grey;
+    opacity: 0.7;
+    margin: 8px 0 5px 14px;
+}
+.login_text_input{
+    color: white;
+    width: 460px;
+    height: 35px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+    background-color: rgb(59,59,59);
+}
+.login_section input:first-child{
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+input::placeholder{
+    color: grey;
+    opacity: 0.4;
+}
+.login_chkbox{
+    width: 19px;
+    height: 19px;
+    vertical-align: -4.5px;
+    margin-right: 10px;
+}
+.login_text_color{
+    color: darkgray;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.login_button_css{
+    width: 150px;
+    height: 50px;
+    color: white;
+    font-size: 15px;
+    background-color: red;
+    border: none;
+    border-radius: 4px;
+    float: left;
+    margin-right: 50px;
+}
+.login_button_css:hover{
+    background-color: black;
+}
+.login_fisrtbtn{
+    margin-left: 56px;
+}
+.regi_back{
+    margin-left: 56px;
+    width: 150px;
+    height: 50px;
+    color: white;
+    font-size: 15px;
+    background-color: grey;
+    border: none;
+    border-radius: 4px;
+    float: left;
+    margin-right: 50px;
+}
+.regi_back:hover{
+    background-color: black;
+}
+.login_mt{
+    margin-top: 15px;
+}
+/*로그인 페이지 끝*/
+/*카트 페이지 시작*/
+.cart_wrap{
+    overflow: hidden;
+    margin-top: 45px;
+}
+.cart_nav_left{
+    float: left;
+    margin-top: 45px;
+}
+.cart_nav_left_wrap{
+    background-color: #222;
+    width: 165px;
+    height: 500px;
+    padding: 32px 0 0 25px;
+    border-radius: 5px;
+    margin-left: 40px;
+
+}
+.cart_nav_left_wrap ul li{
+    margin-bottom: 15px;
+}
+.cart_nav_left_wrap ul li a{
+    color: lightgray;
+    font-size: 17px;
+}
+.cart_nav_left_wrap ul li a:hover{
+    color: red;
+    font-size: 17px;
+}
+.cart_header{
+    margin-left: 540px;
+    font-size: 32px;
+    color: white;
+}
+.cart_subtitle{
+    margin-top: 6px;
+    margin-left: 455px;
+    font-size: 16px;
+    color: dimgray;
+}
+.cart_itemlist_bgc{
+    margin-left: 320px;
+    padding-top: 30px;
+}
+.cart_item_img{
+    width: 80px;
+    height: 90px;
+    border: 1px solid grey;
+    margin-right: 20px;
+}
+.cart_item_info{
+    width: 450px;
+    height: 90px;
+    border: 1px solid grey;
+}
+.cart_itemlist_bgc ul{
+    overflow: hidden;
+}
+.cart_itemlist_bgc ul li{
+    float: left;
+    margin-bottom: 25px;
+}
+.cart_announce{
+    margin-top: 25px;
+    margin-left: 375px;
+    font-size: 17px;
+    color: lightgray;
+}
+.cart_announce span{
+    color: red;
+}
+.cart_btn_wrap{
+    margin-left: 454px;
+    margin-top: 30px;
+}
+.cart_return_btn{
+    font-size: 17px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 3.5px;
+    width: 100px;
+    height: 48px;
+    margin-right: 45px;
+}
+.cart_pay_btn{
+    font-size: 17px;
+    width: 100px;
+    height: 48px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 3.5px;
+}
+.item_list_img_cart img{
+    width: 60px;
+    height: 60px;
+}
+.item_list_txt_cart{
+    width: 110px;
+    padding-top: 15px;
+    font-size: 16px;
+    margin-left: 15px;
+    margin-right: 180px;
+    color: white;
+}
+.item_list_txt_cart a{
+    color: white;
+}
+.item_list_txt_cart a:hover{
+    color: red;
+}
+.item_list_txt_cart2{
+    padding-top: 15px;
+    font-size: 16px;
+    margin-left: 15px;
+    color: white;
+}
+.cart_empty{
+    margin-left: 170px;
+    font-size: 20px;
+    height: 100px;
+    margin-top: 50px;
+    color: lightgrey;
+}
+.cart_amount{
+    width: 30px;
+    text-align: right;
+    background-color: #222;
+    border: none;
+    border-radius: 3px;
+    padding: 2px 2px 2px 6px;
+    color: white;
+}
+.total_amount{
+    width: 635px;
+    font-size: 20px;
+    text-align: right;
+}
+.total_amount{
+    color: lightgrey;
+}
+.cart_modify{
+    background-color: dimgrey;
+    color: lightgrey;
+    border-radius: 3px;
+    border: none;
+    padding: 2px;
+}
+.cart_remove{
+    background-color: dimgrey;
+    color: lightgrey;
+    border-radius: 3px;
+    border: none;
+    padding: 2px;
+}
+
+/*카트 페이지 끝*/
+
+/*회원가입 페이지 시작*/
+.imgText_regi{
+    font-size: 32px;
+    position: absolute;
+    bottom: -18px;
+    left: 542px;
+    color:white;
+}
+.loginAlign li{
+    margin-top: 8px;
+}
+.login_bg_regi{
+    background-color: #222;
+    color: white;
+    width: 520px;
+    height: 860px;
+    margin-left: 334px;
+    margin-bottom: 100px;
+    margin-top: 15px;
+    padding: 28px 0 28px 0;
+    border-radius: 5px;
+}
+.login_bg_regi input{
+    text-align: center;
+}
+.login_bg_regi div{
+    text-align: center;
+
+}
+.login_text_input_regi{
+    color: white;
+    width: 260px;
+    height: 35px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(59,59,59);
+    padding-left: 10px;
+}
+.login_text_input_regi_other{
+    color: white;
+    width: 260px;
+    height: 35px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(59,59,59);
+    display: inline-block;
+    text-align: left;
+}
+.login_chkbox_regi{
+    width: 19px;
+    height: 19px;
+    vertical-align: -4.5px;
+    margin-right: 5px;
+    margin-top: 8px;
+}
+#height{
+    width: 60px;
+}
+#weight{
+    width: 60px;
+    margin-top: 5px;
+}
+.loginAlign{
+    width: 265px;
+    margin: 0 auto;
+}
+.login_text_align{
+    text-align: left;
+    display: block;
+    padding-left: 2px;
+}
+.login_btn_float{
+    margin-left: 30px;
+}
+.login_option{
+    text-align: left;
+    display: block;
+    margin-left: 5px;
+}
+.login_option #height{
+    width: 75px;
+}
+.red_font{
+    color: red;
+}
+.regi_mt{
+    margin-top: 30px;
+}
+#exercise{
+    margin-top: 6px;
+    width: 240px;
+}
+.readonly{
+    color: slategrey;
+    width: 260px;
+    height: 35px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(59,59,59);
+    padding-left: 10px;
+}
+.id_ok{color:#fff; display: none;}
+.id_already{color:#6A82FB; display: none;}
+
+/*회원가입 페이지 끝*/
+
+/*제품 상세정보 페이지 시작*/
+.product_header{
+    margin-top: 20px;
+    font-size: 32px;
+    color: white;
+}
+.product_subtitle{
+    font-size: 16px;
+    color: dimgray;
+}
+.detailWrap{
+    float: left;
+    color: white;
+    text-align: center;
+    width: 720px;
+    margin-left: 239px;
+
+}
+.detailWrap img{
+    width: 180px;
+}
+.detail_innerWrap{
+    overflow: hidden;
+    background-color: #222;
+    border-radius:5px;
+    height: 500px;
+    width: 500px;
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+}
+.detail_innerWrap ul{
+    margin-top: 30px;
+}
+.detail_innerWrap ul li{
+    margin-top: 10px;
+}
+
+.detail_btn_css{
+    width: 120px;
+    height: 45px;
+    color: white;
+    font-size: 15px;
+    background-color: red;
+    border: none;
+    border-radius: 4px;
+    margin-top: 100px;
+}
+.detail_btn_css:hover{
+    background-color: black;
+}
+.detail_cart_css{
+    width: 120px;
+    height: 45px;
+    color: white;
+    font-size: 15px;
+    background-color: grey;
+    border: none;
+    border-radius: 4px;
+    margin-right: 25px;
+}
+.detail_cart_css:hover{
+    background-color: black;
+}
+#amount{
+    width:30px;
+    text-align: right;
+    background-color: dimgrey;
+    border: none;
+    border-radius: 3px;
+    padding: 2px 2px 2px 6px;
+    color: lightgrey;
+}
+.detail_btn{
+    background-color: dimgrey;
+    border-radius: 3px;
+    border: none;
+    padding: 2px;
+    color: lightgrey;
+}
+/*제품 상세정보 페이지 끝*/
+
+/*제품 등록 페이지 시작*/
+.tableWrap{
+    margin-left: 380px;
+    display: block;
+    width: 340px;
+    height: 410px;
+    background-color: #222;
+    border-radius: 5px;
+    padding-left: 85px;
+    padding-top: 5px;
+}
+.tableWrap input{
+    border: none;
+    border-radius: 3px;
+}
+.writeTable table {
+    color: lightgrey;
+    border-bottom: 1px solid white;
+    border-collapse: collapse;
+}
+
+.writeTable td:first-child{
+    border-bottom: 1px solid white;
+    color: lightgrey;
+}
+
+.product_return_btn{
+    font-size: 17px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 3.5px;
+    width: 100px;
+    height: 48px;
+    margin-right: 45px;
+    margin-top: 25px;
+}
+.product_regi_btn{
+    font-size: 17px;
+    width: 100px;
+    height: 48px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 3.5px;
+}
+.write_bgc{
+    padding-left: 5px;
+    background-color: dimgrey;
+    color: lightgrey;
+}
+/*제품 등록 페이지 끝*/
+
+/*제품 수정 페이지 시작*/
+.modify_imgWrap{
+}
+.modify_imgWrap img{
+    width: 50px;
+    margin-left: 20px;
+}
+.product_return_btn_modify{
+    font-size: 17px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 3.5px;
+    width: 90px;
+    height: 40px;
+    margin-left: 15px;
+    margin-right: 45px;
+    margin-top: 28px;
+}
+.product_regi_btn_mofify{
+    font-size: 17px;
+    width: 90px;
+    height: 40px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 3.5px;
+}
+.product_header_modify{
+    margin-top: 70px;
+    font-size: 32px;
+    color: white;
+}
+.product_subtitle_modify{
+    font-size: 16px;
+    color: dimgray;
+}
+.modify_wrap{
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*제품 수정 페이지 끝*/
+
+/*구매하기 페이지*/
+.order_flt_wrap{
+    overflow: hidden;
+    height: 310px;
+    width: 300px;
+    margin-left: 400px;
+    margin-top: 40px;
+    background-color: #222;
+    border-radius: 3px;
+    padding: 25px 10px 25px 45px;
+}
+.order_flt_div{
+    overflow: hidden;
+}
+.order_flt{
+    color: white;
+}
+.order_flt li{
+    float: left;
+    margin-bottom: 10px;
+}
+.order_flt li:first-child{
+    width: 150px;
+}
+.order_flt input{
+    width: 255px;
+    text-align: center;
+    background-color: grey;
+    border: none;
+    border-radius: 3px;
+    height: 28px;
+    font-size: 14px;
+}
+.orderHeader h1{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-right: 23px;
+    margin-bottom: 10px;
+}
+.order_pay_btn{
+    font-size: 17px;
+    width: 100px;
+    height: 48px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 3.5px;
+}
+/*구매하기 페이지 끝*/
+
+/*구매내역 페이지 시작*/
+.order_hisWrap{
+    background-color: #222;
+    border: none;
+    border-radius: 3px;
+    padding: 25px;
+    color: lightgrey;
+    width: 600px;
+}
+.order_hisWrap ul li:first-child{
+    width: 150px;
+}
+.order_gap{
+    margin-bottom: 50px;
+}
+/*구매내역 페이지 끝*/
+
+
+

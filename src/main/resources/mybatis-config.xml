@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias alias="UserDto" type="com.kt_dosirak.domain.UserDto"/>
+        <typeAlias alias="ProductDto" type="com.kt_dosirak.domain.ProductDto"/>
+        <typeAlias alias="CategoryDto" type="com.kt_dosirak.domain.CategoryDto"/>
+        <typeAlias alias="CartDto" type="com.kt_dosirak.domain.CartDto"/>
+        <typeAlias alias="OrderDto" type="com.kt_dosirak.domain.OrderDto"/>
+    </typeAliases>
+</configuration>

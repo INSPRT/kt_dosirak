@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kt_dosirak.dao.UserMapper">
+
+<!--user_info-->
+    <insert id="insert" parameterType="UserDto">
+        INSERT INTO kt_user_info
+            (id, pass, name, phone, address, email, birth, gender, height, weight, exercise)
+        VALUES
+            (#{id}, #{pass}, #{name}, #{phone}, #{address}, #{email}, #{birth}, #{gender}, #{height}, #{weight}, #{exercise})
+    </insert>
+
+    <sql id="selectFromUser">
+        SELECT id, pass, name, phone, address, email, birth, gender, height, weight, exercise, reg_date
+        FROM kt_user_info
+    </sql>
+
+    <select id="select" parameterType="String" resultType="UserDto">
+        <include refid="selectFromUser"/>
+        WHERE id = #{id}
+    </select>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM kt_user_info WHERE id = #{id}
+    </delete>
+
+    <delete id="deleteAll">
+        DELETE FROM kt_user_info
+    </delete>
+
+    <update id="update" parameterType="UserDto">
+        UPDATE kt_user_info
+        SET   name = #{name},
+              pass = #{pass},
+              phone = #{phone},
+              address = #{address},
+              birth = #{birth},
+              gender = #{gender},
+              height = #{height},
+              weight = #{weight},
+              exercise = #{exercise}
+        WHERE id = #{id}
+    </update>
+<!--//user_info-->
+
+    <!-- 아이디 중복 체크 -->
+    <select id="idCheck" parameterType="String" resultType="int">
+        SELECT COUNT(id)
+        FROM kt_user_info
+        WHERE id = #{id}
+    </select>
+</mapper>

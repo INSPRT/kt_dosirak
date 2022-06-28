@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kt_dosirak.dao.OrderMapper">
+
+
+    <insert id="insert" parameterType="OrderDto">
+        INSERT INTO kt_order
+            (order_id, order_user_id, order_receiver, order_address, order_phone, order_totalPrice, order_product_id, order_amount, order_product_name)
+        VALUES
+            (#{order_id}, #{order_user_id}, #{order_receiver}, #{order_address}, #{order_phone}, #{order_totalPrice}, #{order_product_id}, #{order_amount}, #{order_product_name})
+    </insert>
+
+    <select id="select" parameterType="map" resultType="OrderDto">
+        SELECT order_id, order_receiver, order_address, order_phone, order_totalPrice, order_product_id, order_amount, order_product_name
+        FROM kt_order
+        WHERE order_user_id = #{order_user_id}
+        ORDER BY order_time DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <delete id="deleteAll">
+        DELETE FROM kt_order
+    </delete>
+
+
+</mapper>
