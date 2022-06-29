@@ -19,6 +19,12 @@
         LIMIT #{offset}, #{pageSize}
     </select>
 
+    <update id="update" parameterType="ProductDto">
+        UPDATE kt_product
+        SET product_stock = product_stock - #{product_stock}
+        WHERE product_id = #{product_id}
+    </update>
+
     <delete id="deleteAll">
         DELETE FROM kt_order
     </delete>

@@ -1,6 +1,7 @@
 package com.kt_dosirak.dao;
 
 import com.kt_dosirak.domain.OrderDto;
+import com.kt_dosirak.domain.ProductDto;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,5 +23,10 @@ public class OrderDaoImpl implements OrderDao {
     @Override
     public List<OrderDto> select(Map map) throws Exception{
         return session.selectList(namespace+"select", map);
+    }
+
+    @Override
+    public int updateStack(ProductDto productDto) throws Exception{
+        return session.update(namespace+"update", productDto);
     }
 }

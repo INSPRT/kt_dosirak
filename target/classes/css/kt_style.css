@@ -995,5 +995,11 @@ input::placeholder{
 }
 /*구매내역 페이지 끝*/
 
-
+/*재고 부족 페이지*/
+.empty_order_title{
+    font-size: 25px;
+    margin-top: 50px;
+    margin-left: 270px;
+}
+/*재고 부족 페이지 끝*/
 

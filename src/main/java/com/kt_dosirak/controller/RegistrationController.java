@@ -42,7 +42,6 @@ public class RegistrationController {
 
         Integer cnt;
 
-//        ㅠㅠㅠㅠ
         if(id.equals("")){
             cnt = null;
             return String.valueOf(cnt);

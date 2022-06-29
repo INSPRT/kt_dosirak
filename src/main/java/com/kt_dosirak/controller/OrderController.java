@@ -2,6 +2,7 @@ package com.kt_dosirak.controller;
 
 import com.kt_dosirak.domain.CartDto;
 import com.kt_dosirak.domain.OrderDto;
+import com.kt_dosirak.domain.ProductDto;
 import com.kt_dosirak.service.CartService;
 import com.kt_dosirak.service.OrderService;
 import com.kt_dosirak.service.ProductService;
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -56,24 +59,48 @@ public class OrderController {
         return "kt_order";
     }
 
+
     @PostMapping("/order/pay")
-    public String orderPay(OrderDto orderDto, HttpServletRequest request, Model m){
+    public String orderPay(OrderDto orderDto, HttpServletRequest request, Model m) {
 
         try {
-           if(orderService.doOrder(orderDto)==1){
-               HttpSession session = request.getSession();
-               String user_id = (String) session.getAttribute("id");
+            HttpSession session = request.getSession();
+            String user_id = (String) session.getAttribute("id");
+
+            String[] ids = orderDto.getOrder_product_id().split(",");
+            String[] stacks = orderDto.getOrder_amount().split(",");
+            String[] product_names = orderDto.getOrder_product_name().split(",");
+
+                for(int j = 0; j<ids.length; j++) {
+                    ProductDto productDto = productService.read(ids[j]);
+
+                    int num = Integer.parseInt(stacks[j]);
+
+                    if(productDto.getProduct_stock() < num){
+                        m.addAttribute("left_stock", productDto.getProduct_stock());
+                        m.addAttribute("empty_item_names", productDto.getProduct_name());
+                        m.addAttribute("order_item_names", product_names[j]);
+                        m.addAttribute("order_items_cnt", stacks[j]);
+                        return "kt_emptyProduct";
+                    }
+                        productDto.setProduct_id(ids[j]);
+                        productDto.setProduct_stock(num);
+
+                        orderService.stackUpdate(productDto);
+                }
+
+            if(orderService.doOrder(orderDto)==1){
                cartService.deleteAll(user_id);
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+
         }
 
         return "redirect:/order/history";
     }
 
     @GetMapping("/order/history")
-    public String orderHistory(HttpServletRequest request, Model m){
+    public String orderHistory(HttpServletRequest request, HttpServletResponse response, Model m) throws IOException {
         HttpSession session = request.getSession();
         String order_user_id = (String) session.getAttribute("id");
 
@@ -84,6 +111,7 @@ public class OrderController {
         try {
             List<OrderDto> orderList = orderService.printOrder(map);
             m.addAttribute("orderList", orderList);
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
