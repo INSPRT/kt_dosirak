@@ -66,31 +66,34 @@ public class OrderController {
         try {
             HttpSession session = request.getSession();
             String user_id = (String) session.getAttribute("id");
-
             String[] ids = orderDto.getOrder_product_id().split(",");
             String[] stacks = orderDto.getOrder_amount().split(",");
             String[] product_names = orderDto.getOrder_product_name().split(",");
 
+                ProductDto productDto = null;
+                int num = 0;
                 for(int j = 0; j<ids.length; j++) {
-                    ProductDto productDto = productService.read(ids[j]);
+                    productDto = productService.read(ids[j]);
+                    //주문수량
+                    num = Integer.parseInt(stacks[j]);
 
-                    int num = Integer.parseInt(stacks[j]);
-
-                    if(productDto.getProduct_stock() < num){
+                    if(!isEmpty(productDto,num)){
                         m.addAttribute("left_stock", productDto.getProduct_stock());
                         m.addAttribute("empty_item_names", productDto.getProduct_name());
                         m.addAttribute("order_item_names", product_names[j]);
                         m.addAttribute("order_items_cnt", stacks[j]);
                         return "kt_emptyProduct";
                     }
-                        productDto.setProduct_id(ids[j]);
-                        productDto.setProduct_stock(num);
-
-                        orderService.stackUpdate(productDto);
                 }
-
-            if(orderService.doOrder(orderDto)==1){
-               cartService.deleteAll(user_id);
+            if(isEmpty(productDto, num)==true) {
+                for(int i=0; i<ids.length; i++){
+                    productDto.setProduct_id(ids[i]);
+                    productDto.setProduct_stock(Integer.parseInt(stacks[i]));
+                    orderService.stackUpdate(productDto);
+                }
+                if(orderService.doOrder(orderDto)==1){
+                    cartService.deleteAll(user_id);
+                }
             }
         } catch (Exception e) {
 
@@ -126,5 +129,12 @@ public class OrderController {
         // 2. 세션에 id가 있는지 확인, 있으면 true를 반환
         return session.getAttribute("id") != null;
     }
+
+        private boolean isEmpty(ProductDto productDto, int num){
+            if(productDto.getProduct_stock() < num){
+                return false;
+            }
+            return true;
+        }
 
 }

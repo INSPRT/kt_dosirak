@@ -17,7 +17,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="${path}/resources/css/reset.css">
     <link rel="stylesheet" href="${path}/resources/css/kt_style.css">
-    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>="text/javascript"
 
     <!-- 웹폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">

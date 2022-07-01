@@ -98,6 +98,7 @@
                     <div class="cart_itemlist">
 
                     </div>
+                </div>
             </div>
     </div>
 <script type="text/javascript">
